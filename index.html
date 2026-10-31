@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#21102f">
+  <meta name="description" content="Arcade. Insert coins, cause chaos, collect pixels.">
+  <title>ARCADE · DAY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="scanlines" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#" data-go="home" aria-label="Arcade home"><span class="brand-dot"></span><span class="brand-accent">.ARCADE</span></a>
+    <div class="top-actions">
+      <span class="day-chip">DAY 03 <i>/ 19</i></span>
+      <button id="musicToggle" class="sound-toggle" type="button" aria-pressed="false"><span class="sound-icon">♫</span><span id="musicLabel">MUSIC OFF</span></button>
+    </div>
+  </header>
+
+  <main>
+    <!-- PAGE 1: ENTRY -->
+    <section id="homePage" class="page active" aria-labelledby="heroTitle">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="blink">●</span> PLAYER 01 · SPECIAL GUEST DETECTED</p>
+          <h1 id="heroTitle">Aracdey<br><span>ARCADE</span></h1>
+          <div class="pixel-rule"><span></span><span></span><span></span><span></span><span></span></div>
+          <p id="introText" class="intro-copy"></p>
+          <button id="chooseGameBtn" class="button button-primary big-button" type="button">CHOOSE YOUR GAME <span>▶</span></button>
+          <p class="tiny-note">NO SKILL REQUIRED. Gambling your life savings is ENCOURAGED.</p>
+        </div>
+
+        <div class="cabinet-wrap">
+          <div class="floating-star star-one">✦</div><div class="floating-star star-two">✧</div>
+          <div class="arcade-cabinet">
+            <div class="cabinet-marquee"><span>★ Chaos Machine ★</span></div>
+            <div class="cabinet-screen">
+              <div class="screen-glow"></div>
+              <div class="screen-title">INSERT<br><b>CHAOS</b></div>
+              <div class="screen-characters"><span>★</span><span>♥</span><span>7</span></div>
+              <div class="screen-scan"></div>
+            </div>
+            <div class="cabinet-controls"><div class="joystick"><i></i></div><div class="control-buttons"><b></b><b></b></div></div>
+            <div class="cabinet-speaker"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="cabinet-base">PRESS START</div>
+          </div>
+          <div class="shin-sticker" aria-label="Shin-chan sticker placeholder">
+            <img id="shinSticker" src="assets/images/shinchan.png" alt="Shin-chan sticker" onerror="this.style.display='none';document.getElementById('shinFallback').hidden=false">
+            <div id="shinFallback" class="shin-fallback" hidden><span>しん</span><b>HEY!</b><small>SHIN-CHAN</small></div>
+          </div>
+          <div class="coin coin-a">★</div><div class="coin coin-b">10¢</div>
+        </div>
+      </div>
+      <div class="ticker"><span>WELCOME TO THE ARCADE</span><b>✦</b><span>2 GAMES · 5 SLOT SPINS · 30 SECONDS OF PURE SKILL</span><b>✦</b><span>WELCOME TO THE ARCADE</span></div>
+    </section>
+
+    <!-- PAGE 2: ARCADE -->
+    <section id="arcadePage" class="page" aria-labelledby="arcadeTitle">
+      <div class="section-heading">
+        <p class="eyebrow">SELECT YOUR WEAPON (METAPHORICALLY)</p>
+        <h2 id="arcadeTitle">THE <span>ARCADE FLOOR</span></h2>
+        <p>Two Machines. Two Games. Two chances to prove absolutely nothing. Have fun :D.</p>
+      </div>
+      <div class="game-cards">
+        <article class="game-card pop-card">
+          <div class="card-topline"><span>GAME 01</span><span class="status-dot">READY</span></div>
+          <div class="game-art shin-art"><div class="hole"></div><div class="mini-shin">しん<br><b>HEY!</b></div><div class="sparkle">✦</div></div>
+          <h3>SHIN-CHAN POP!</h3>
+          <p>Whack-a-Shin. Tap the tiny menace before he vanishes. You have 30 seconds.(also if you dont see shinchan here too sorry X2)</p>
+          <button class="button button-pink launch-game" data-game="pop" type="button">PLAY THIS GAME <span>▶</span></button>
+        </article>
+        <article class="game-card slot-card">
+          <div class="card-topline"><span>GAME 02</span><span class="status-dot">READY</span></div>
+          <div class="game-art slot-art"><div class="mini-reels"><b>★</b><b>7</b><b>🍒</b></div><div class="slot-lever"></div></div>
+          <h3>LUCKY SLOT</h3>
+          <p>Five spins. Three matching symbols mean jackpot..</p>
+          <button class="button button-cyan launch-game" data-game="slot" type="button">PLAY THIS GAME <span>▶</span></button>
+        </article>
+      </div>
+      <section class="daily-bridge">
+        <div class="ticket-icon">✉</div>
+        <div><p class="eyebrow">A LITTLE SOMETHING EXTRA</p><h3>YOUR DAILY WORD OF ENCOURAGMENT</h3><p>Also- Physics is cool.</p></div>
+        <button id="openLetterBtn" class="button button-yellow" type="button">OPEN DAILY LETTER ↗</button>
+      </section>
+      <button class="text-back" data-go="home" type="button">← BACK TO THE ENTRY</button>
+    </section>
+
+    <!-- PAGE 3: LETTER -->
+    <section id="letterPage" class="page letter-page" aria-labelledby="letterTitle">
+      <div class="section-heading letter-heading">
+        <p class="eyebrow"> PAUSE SCREEN</p>
+        <h2 id="letterTitle">A CAREFULLY ARRANGED SQUENCE OF  <span>WORDS</span></h2>
+        <p>.</p>
+      </div>
+      <section class="countdown-panel" id="countdownPanel">
+        <div class="countdown-top"><span>⌁ NEXT BIG LEVEL</span><span>20 NOVEMBER · 00:00 IST</span></div>
+        <h3>BIRTHDAY COUNTDOWN</h3>
+        <div class="countdown-grid" id="countdownGrid">
+          <div><strong id="days">000</strong><span>DAYS</span></div><b>:</b>
+          <div><strong id="hours">00</strong><span>HOURS</span></div><b>:</b>
+          <div><strong id="minutes">00</strong><span>MINUTES</span></div><b>:</b>
+          <div><strong id="seconds">00</strong><span>SECONDS</span></div>
+        </div>
+        <p class="countdown-caption">THE CLOCK IS TICKING..</p>
+      </section>
+
+      <article class="letter-paper">
+        <div class="paper-stamp">DAY<br><b>03</b></div>
+        <div class="paper-top"><span>✦ THE DAILY POST ✦</span><span>NO. 003</span></div>
+        <p id="letterGreeting" class="letter-greeting"></p>
+        <div id="letterBody" class="letter-body"></div>
+        <p id="letterSignoff" class="letter-signoff"></p>
+        <div class="paper-ticket">★ OFFICIAL ARCADEY ARCADE COLLECTIBLE ★</div>
+      </article>
+      <div class="secret-box">
+        <button id="everydaySecretBtn" class="secret-button" type="button" aria-expanded="false">P.S. THERE'S A SECRET HERE <span>＋</span></button>
+        <p id="everydaySecret" class="secret-message" hidden></p>
+      </div>
+      <div class="letter-footer"><button class="text-back" data-go="arcade" type="button">← BACK TO THE ARCADE</button><span>MADE WITH QUESTIONABLE AMOUNTS OF COFFEE</span></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><span>© ARCADEY ARCADE</span><span>INSERT COIN · COLLECT Prices · REPEAT</span></footer>
+
+  <!-- GAME SELECT MODAL -->
+  <div id="selectModal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close="select"></div>
+    <div class="modal-box select-box" role="dialog" aria-modal="true" aria-labelledby="selectTitle">
+      <button class="modal-x" data-close="select" aria-label="Close" type="button">×</button>
+      <p class="eyebrow">PLAYER 01, MAKE A CHOICE</p><h2 id="selectTitle">PICK YOUR <span>GAME</span></h2>
+      <div class="select-options">
+        <button class="select-option" data-game="pop" type="button"><span class="option-icon">しん!</span><span><b>SHIN-CHAN POP!</b><small>30 seconds. Nine holes(also if i did code it correct you should see shinchan here, if you dont sorry).</small></span><i>▶</i></button>
+        <button class="select-option" data-game="slot" type="button"><span class="option-icon">🎰</span><span><b>GAMBLER'S LUCKY SLOT</b><small>Five spins. May the GAMBLING gods be  in your favour.</small></span><i>▶</i></button>
+      </div>
+      <p class="modal-footnote">CHOOSE WISELY. OR DON'T. IT'S NOT THAT SERIOUS.</p>
+    </div>
+  </div>
+
+  <!-- GAME MODAL -->
+  <div id="gameModal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close="game"></div>
+    <div class="modal-box game-box" role="dialog" aria-modal="true" aria-labelledby="gameTitle">
+      <button class="modal-x" data-close="game" aria-label="Close game" type="button">×</button>
+      <div id="popGame" class="game-view" hidden>
+        <p class="eyebrow">GAME 01 · TEST YOUR REFLEXES</p><h2 id="gameTitle">SHIN-CHAN <span>POP!</span></h2>
+        <div class="scoreboard"><div><small>SCORE</small><strong id="popScore">00</strong></div><div><small>TIME LEFT</small><strong id="popTime">30</strong></div><div><small>BEST THIS VISIT</small><strong id="popBest">00</strong></div></div>
+        <div id="popGrid" class="pop-grid" aria-label="Nine-hole tapping game"></div>
+        <p id="popStatus" class="game-status">Press START ROUND when you're ready!</p>
+        <button id="startPopBtn" class="button button-pink game-action" type="button">START ROUND ▶</button>
+      </div>
+      <div id="slotGame" class="game-view" hidden>
+        <p class="eyebrow">GAME 02 · THE MACHINE KNOWS NOTHING</p><h2 id="gameTitleSlot"><span>LUCKY SLOT</span></h2>
+        <div class="slot-machine">
+          <div class="slot-top">★BIG MAYBE ★</div>
+          <div class="reels" aria-label="Slot machine reels"><div class="reel" id="reel0">★</div><div class="reel" id="reel1">🍒</div><div class="reel" id="reel2">7</div></div>
+          <div class="slot-bottom">GOOD LUCK</div>
+        </div>
+        <div class="slot-stats"><span>SPINS LEFT <b id="spinsLeft">5</b></span><span>SPIN <b id="spinNumber">0</b> / 5</span></div>
+        <p id="slotStatus" class="game-status">Five spins. One very not rigged machine.</p>
+        <button id="spinBtn" class="button button-cyan game-action" type="button">SPIN THE REELS ↻</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- REWARD MODAL -->
+  <div id="rewardModal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close="reward"></div>
+    <div class="modal-box reward-box" role="dialog" aria-modal="true" aria-labelledby="rewardTitle">
+      <button class="modal-x" data-close="reward" aria-label="Close reward" type="button">×</button>
+      <div class="reward-burst">✦ ★ ✦</div><p class="eyebrow">ROUND COMPLETE · ACHIEVEMENT UNLOCKED</p>
+      <h2 id="rewardTitle">YOU DID IT!</h2>
+      <p id="rewardMessage" class="reward-message"></p>
+      <p id="rewardResult" class="reward-result"></p>
+      <div class="reward-confetti" aria-hidden="true">✦　★　✧　✦　★</div>
+      <button id="rewardReturnBtn" class="button button-primary" type="button">BACK TO THE ARCADE</button>
+    </div>
+  </div>
+
+  <!-- BIRTHDAY MODE -->
+  <div id="birthdayOverlay" class="birthday-overlay" hidden>
+    <div class="birthday-card">
+      <div class="birthday-kicker">★ SPECIAL DAY DETECTED ★</div>
+      <div class="birthday-cake">🎂</div>
+      <p class="eyebrow">THE WAIT IS OVER</p>
+      <h2 id="birthdayTitle">IT'S YOUR BIRTHDAY!</h2>
+      <p id="birthdayMessage"></p>
+      <button id="birthdaySecretBtn" class="button button-yellow" type="button">UNLOCK BIRTHDAY SECRET ✦</button>
+      <p id="birthdaySecret" class="birthday-secret" hidden></p>
+      <button id="closeBirthdayBtn" class="birthday-close" type="button">LET ME LOOK AROUND →</button>
+    </div>
+    <div id="confettiLayer" class="confetti-layer" aria-hidden="true"></div>
+  </div>
+
+  <audio id="bgMusic" src="assets/audio/arcade-music.mp3" loop preload="none"></audio>
+  <audio id="popSound" src="assets/audio/pop-sound.mp3" preload="none"></audio>
+  <audio id="spinSound" src="assets/audio/spin-sound.mp3" preload="none"></audio>
+  <audio id="winSound" src="assets/audio/win-sound.mp3" preload="none"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
