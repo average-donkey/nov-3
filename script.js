@@ -1,6 +1,4 @@
-// ====================================
-// EDIT YOUR PERSONAL MESSAGES HERE
-// ====================================
+
 const PERSONAL = {
   intro: `HIIII BROSKI!!
 
@@ -24,14 +22,11 @@ Anyway, here's your reminder that you're an important part of this very unseriou
   birthdayTitle: "IT'S YOUR BIRTHDAY!",
   birthdayMessage: "HAPPY BIRTHDAY, BROMINE Today the world belongs to you. May your day be full of excellent snacks, peakkkk nonsense, and people reminding you how appreciated you are.",
   birthdaySecret: "BIRTHDAY-ONLY SECRET: You have unlocked the legendary +100 hours of being annoyed by me Redeem immediately. ★",
-  // Optional test switch: set to "2026-11-20T12:00:00+05:30" to preview birthday mode.
-  // Keep null for the real IST calendar logic.
+
   birthdayTestNow: null
 };
 
-// ====================================
-// ARCADE LOGIC — you generally don't need to edit below
-// ====================================
+
 (() => {
   "use strict";
   const $ = (id) => document.getElementById(id);
@@ -224,7 +219,6 @@ Anyway, here's your reminder that you're an important part of this very unseriou
     });
     $("birthdaySecretBtn").addEventListener("click",()=>{$("birthdaySecret").hidden=!$("birthdaySecret").hidden;});
     $("closeBirthdayBtn").addEventListener("click",()=>{$("birthdayOverlay").hidden=true;});
-    // Escape closes ordinary modals; it never changes game progress except stopping the active timer safely.
     document.addEventListener("keydown",e=>{if(e.key==="Escape"){Object.keys(modals).forEach(closeModal);}});
   }
   init();
