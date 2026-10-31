@@ -99,7 +99,7 @@ Anyway, here's your reminder that you're an important part of this very unseriou
     activeHole=next;
     const hole=$("popGrid").children[next];hole.classList.add("active");
     const target=document.createElement("button");target.type="button";target.className="pop-target";
-    target.setAttribute("aria-label","Tap Shin-chan");target.innerHTML="<span>しん</span><b>HEY!</b>";
+    target.setAttribute("aria-label","Tap Shin-chan");target.innerHTML = '<img src="assets/images/shinchan.png" alt="Shin-chan">';
     target.addEventListener("click",(event)=>{
       event.stopPropagation();if(!popRunning||activeHole!==next)return;
       popScore++;popBest=Math.max(popBest,popScore);setText("popScore",String(popScore).padStart(2,"0"));
